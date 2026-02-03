@@ -5,7 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rainier | Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --accent: #007bff;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Inter', sans-serif;
+            padding: 2rem 0;
+        }
+
+        .bento-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(150px, auto);
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: none;
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Grid Layout Logic */
+        .header-box { grid-column: span 3; display: flex; align-items: center; gap: 1.5rem; }
+        .about-box { grid-column: span 2; }
+        .skills-box { grid-column: span 2; }
+        .experience-box { grid-column: span 2; grid-row: span 2; }
+        .hobbies-box { grid-column: span 2; }
+        .project-box { grid-column: span 4; }
+
+        .profile-circle {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .pill {
+            display: inline-block;
+            background: #e9ecef;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 3px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .bento-container {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -13,18 +93,18 @@
     <header class="card header-box">
         <div class="profile-circle">R</div>
         <div>
-            <h1>Rainier Luis L. Yray</h1>
-            <p>IT Student | Web Developer</p>
+            <h1 class="h3 mb-0">Rainier Luis L. Yray</h1>
+            <p class="text-secondary mb-0">IT Student | Web Developer</p>
         </div>
     </header>
 
     <section class="card about-box">
-        <h3>About Me</h3>
-        <p>I'm a beginner web developer learning HTML, CSS, Bootstrap, and JavaScript. I enjoy building simple, clean, and responsive websites during my free time.</p>
+        <h3 class="h5">About Me</h3>
+        <p class="small text-muted">I'm a beginner web developer learning HTML, CSS, Bootstrap, and JavaScript. I enjoy building simple, clean, and responsive websites during my free time.</p>
     </section>
 
     <section class="card skills-box">
-        <h3>Skills</h3>
+        <h3 class="h5">Skills</h3>
         <div class="skill-list">
             <span class="pill">HTML</span>
             <span class="pill">CSS</span>
@@ -34,49 +114,49 @@
     </section>
 
     <section class="card experience-box">
-        <h3>Hobbies</h3>
-        <div class="item">
+        <h3 class="h5">Hobbies</h3>
+        <div class="item mb-3">
             <strong>Tech & Learning</strong>
-            <p>Watching deep dives into software development and tech hardware.</p>
+            <p class="small text-muted">Watching deep dives into software development and tech hardware.</p>
         </div>
         <div class="item">
             <strong>Sports & Gaming</strong>
-            <p>Playing basketball and video games to unwind.</p>
+            <p class="small text-muted">Playing basketball and video games to unwind.</p>
         </div>
     </section>
 
     <section class="card hobbies-box">
-        <h3>Contact</h3>
+        <h3 class="h5">Contact</h3>
         <p class="small mb-1">r.yray.557826@umindanao.edu.ph</p>
         <p class="small">+63 976 560 9118</p>
     </section>
 
-<section class="card project-box">
-    <h3>My Projects</h3>
-    <div class="row g-3">
-        <div class="col-md-4">
-            <div class="project-item border-0">
-                <img src="student.jpg" class="img-fluid rounded mb-2" alt="Project 1">
-                <strong>Project 1</strong>
-                <p class="small text-secondary">Simple Website Design</p>
+    <section class="card project-box">
+        <h3 class="h5 mb-3">My Projects</h3>
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="project-item">
+                    <img src="student.jpg" class="project-img mb-2" alt="Project 1">
+                    <strong class="d-block">Project 1</strong>
+                    <p class="small text-secondary">Simple Website Design</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-item">
+                    <img src="student.jpg" class="project-img mb-2" alt="Project 2">
+                    <strong class="d-block">Project 2</strong>
+                    <p class="small text-secondary">Bootstrap Landing Page</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-item">
+                    <img src="student.jpg" class="project-img mb-2" alt="Project 3">
+                    <strong class="d-block">Project 3</strong>
+                    <p class="small text-secondary">Simple HTML Page</p>
+                </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="project-item border-0">
-                <img src="student.jpg" class="img-fluid rounded mb-2" alt="Project 2">
-                <strong>Project 2</strong>
-                <p class="small text-secondary">Bootstrap Landing Page</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="project-item border-0">
-                <img src="student.jpg" class="img-fluid rounded mb-2" alt="Project 3">
-                <strong>Project 3</strong>
-                <p class="small text-secondary">Simple HTML Page</p>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 </div>
 
 <footer class="text-center mt-4"> 
@@ -86,4 +166,3 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
